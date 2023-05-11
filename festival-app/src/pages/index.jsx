@@ -6,7 +6,7 @@ import styles from '@/styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home({bands}) {
+export default function myApp({bands}) {
   console.log(bands)
   return (
     <>
@@ -14,7 +14,7 @@ export default function Home({bands}) {
     </>
   )
 }
-export async function getServerSideProps() {
+export async function getInitialProps() {
   //provide appContext in order to do 404's
   const api = "http://localhost:8080/bands";
   const res = await fetch(api);

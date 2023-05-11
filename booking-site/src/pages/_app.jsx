@@ -6,8 +6,5 @@ export default function MyApp({ Component, pageProps }) {
 }
 
 
-MyApp.getInitialProps = async (appContext) => {
-  //provide appContext in order to do 404's
-  
-  }
+
   
