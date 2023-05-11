@@ -6,8 +6,9 @@ export default function Home({bands}) {
   return (
     <>
      {bands.map((perBand) => (
+        //key & value fortæller hvad bands sorteres på 
                 <section key={bands.slug} value={bands.slug}>
-                  {perBand.name}
+                  <h2>{perBand.name}</h2>
                 </section>
               ))}
     </>
