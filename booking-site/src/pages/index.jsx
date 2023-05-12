@@ -21,25 +21,26 @@ export async function getServerSideProps() {
   console.log(data);
   return {
     props: { bands: data },
-  };
-}
-export async function getServerSideProps() {
-  //provide appContext in order to do 404's
-  const api = "http://localhost:8080/schedule";
-  const res = await fetch(api);
-  const data = await res.json();
-  console.log(data);
-  return {
-    props: { schedule: data },
-  };
-}
-export async function getServerSideProps() {
-  //provide appContext in order to do 404's
-  const api = "http://localhost:8080/available-spots";
-  const res = await fetch(api);
-  const data = await res.json();
-  console.log(data);
-  return {
-    props: { spots: data },
-  };
-}
+  };}
+
+  
+// export async function getServerSideProps() {
+//   //provide appContext in order to do 404's
+//   const api = "http://localhost:8080/schedule";
+//   const res = await fetch(api);
+//   const data = await res.json();
+//   console.log(data);
+//   return {
+//     props: { schedule: data },
+//   };
+// }
+// export async function getServerSideProps() {
+//   //provide appContext in order to do 404's
+//   const api = "http://localhost:8080/available-spots";
+//   const res = await fetch(api);
+//   const data = await res.json();
+//   console.log(data);
+//   return {
+//     props: { spots: data },
+//   };
+// }
