@@ -1,18 +1,17 @@
+import styles from "@/styles/Home.module.css";
 
-import styles from '@/styles/Home.module.css'
-
-export default function Home({bands}) {
-  console.log(bands)
+export default function Home({ bands }) {
+  console.log(bands);
   return (
     <>
-     {bands.map((perBand) => (
-        //key & value fortæller hvad bands sorteres på 
-                <section key={bands.slug} value={bands.slug}>
-                  <h2>{perBand.name}</h2>
-                </section>
-              ))}
+      {bands.map((perBand) => (
+        //key & value fortæller hvad bands sorteres på
+        <section key={bands.slug} value={bands.slug}>
+          <h2>{perBand.name}</h2>
+        </section>
+      ))}
     </>
-  )
+  );
 }
 export async function getServerSideProps() {
   //provide appContext in order to do 404's
@@ -21,8 +20,6 @@ export async function getServerSideProps() {
   const data = await res.json();
   console.log(data);
   return {
-    props: 
-  {bands: data,}
-}
-
+    props: { bands: data },
+  };
 }
