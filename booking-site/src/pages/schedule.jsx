@@ -1,91 +1,107 @@
+import stylesSchedule from "../styles/Schedule.module.css";
 
+export default function Schedule({ schedule }) {
+  const Midmon = schedule.Midgard.mon;
+  // const Midtue = schedule.Midgard.tue;
+  // const Midwed = schedule.Midgard.wed;
+  // const Midthu = schedule.Midgard.thu;
+  // const Midfri = schedule.Midgard.fri;
+  // const Midsat = schedule.Midgard.sat;
+  // const Midsun = schedule.Midgard.sun;
 
-export default function Schedule({schedule}){
-  // const Scenes = schedule
+  //JOTUNHEIM
+  const Jotmon = schedule.Jotunheim.mon;
+  // const Jottue = schedule.Jotunheim.tue;
+  // const Jotwed = schedule.Jotunheim.wed;
+  // const Jotthu = schedule.Jotunheim.thu;
+  // const Jotfri = schedule.Jotunheim.fri;
+  // const Jotsat = schedule.Jotunheim.sat;
+  // const Jotsun = schedule.Jotunheim.sun;
 
-  
-  const mon = schedule.Midgard.mon;
-  const tue = schedule.Midgard.tue;
-  const wed = schedule.Midgard.wed;
-  const thu = schedule.Midgard.thu;
-  const fri = schedule.Midgard.fri;
-  const sat = schedule.Midgard.sat;
-  const sun = schedule.Midgard.sun;
-console.log(schedule.Midgard.mon)
+  //VANAHEIM
+  const Vanmon = schedule.Vanaheim.mon;
+  // const Vantue = schedule.Vanaheim.tue;
+  // const Vanwed = schedule.Vanaheim.wed;
+  // const Vanthu = schedule.Vanaheim.thu;
+  // const Vanfri = schedule.Vanaheim.fri;
+  // const Vansat = schedule.Vanaheim.sat;
+  // const Vansun = schedule.Vanaheim.sun;
+
   return (
     <>
-    <h1>hej</h1>
-    {/* mapping each play event for a band in monday */}
-    {mon.map((bandEvent) =>  (
-
-      <section key={bandEvent.act} value={bandEvent.act}>
-        <h2>{bandEvent.act}</h2>
-      </section>
-    )
-    )
-    }
-    <br></br>
-    {tue.map((bandEvent) =>  (
-
-      <section key={bandEvent.act} value={bandEvent.act}>
-        <h2>{bandEvent.act}</h2>
-      </section>
-    )
-    )
-    }<br></br>
-    {wed.map((bandEvent) =>  (
-
-      <section key={bandEvent.act} value={bandEvent.act}>
-        <h2>{bandEvent.act}</h2>
-      </section>
-    )
-    )
-    }<br></br>
-    {thu.map((bandEvent) =>  (
-
-      <section key={bandEvent.act} value={bandEvent.act}>
-        <h2>{bandEvent.act}</h2>
-      </section>
-    )
-    )
-    }
-    <br></br>
-    {fri.map((bandEvent) =>  (
-
-      <section key={bandEvent.act} value={bandEvent.act}>
-        <h2>{bandEvent.act}</h2>
-      </section>
-    )
-    )
-    }<br></br>
-    {sat.map((bandEvent) =>  (
-
-      <section key={bandEvent.act} value={bandEvent.act}>
-        <h2>{bandEvent.act}</h2>
-      </section>
-    )
-    )
-    }
-    <br></br>
-    {sun.map((bandEvent) =>  (
-
-      <section key={bandEvent.act} value={bandEvent.act}>
-        <h2>{bandEvent.act}</h2>
-      </section>
-    )
-    )
-    }
- </>
-  )
+      {/* schedule timetable */}
+      <div className={stylesSchedule.schedule_timetable}>
+        <section className="program_day">
+          <span className="program_day-date"></span>
+        </section>
+        <aside> hej </aside>
+        {/* schedule scenes grid */}
+        <div className={stylesSchedule.schedule_scenes}>
+          <div className="schedule_scene">
+            <span className="schedule_scene_label"> Midgard</span>
+            <div className="schedule_act">
+              {Midmon.map((bandEvent) => (
+                <section
+                  key={bandEvent.act}
+                  value={bandEvent.act}
+                  className={stylesSchedule.bandEvent_section}
+                >
+                  <article className={stylesSchedule.Midgard_bandEvent}>
+                    <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
+                    <h2>{bandEvent.act}</h2>
+                  </article>
+                </section>
+              ))}
+            </div>
+          </div>
+          <div className="schedule_scene">
+            <span className="schedule_scene_label"> Vanaheim</span>
+            <div className="schedule_act">
+              {Vanmon.map((bandEvent) => (
+                <section
+                  key={bandEvent.act}
+                  value={bandEvent.act}
+                  className={stylesSchedule.bandEvent_section}
+                >
+                  <article className={stylesSchedule.Vanaheim_bandEvent}>
+                    <h3>{bandEvent.start}</h3>
+                    <h3>{bandEvent.end}</h3>
+                    <h2>{bandEvent.act}</h2>
+                  </article>
+                </section>
+              ))}
+            </div>
+          </div>
+          <div className="schedule_scene">
+            <span className="schedule_scene_label"> Jotunheim</span>
+            <div className="schedule_act">
+              {Jotmon.map((bandEvent) => (
+                <section
+                  key={bandEvent.act}
+                  value={bandEvent.act}
+                  className={stylesSchedule.bandEvent_section}
+                >
+                  <article className={stylesSchedule.Jotunheim_bandEvent}>
+                    <h3>{bandEvent.start}</h3>
+                    <h3>{bandEvent.end}</h3>
+                    <h2>{bandEvent.act}</h2>
+                  </article>
+                </section>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
-export async function getServerSideProps(){
-//provide appContext in order to do 404's
-const api = "http://localhost:8080/schedule";
-const res = await fetch(api);
-const data = await res.json();
-console.log(data);
-return {
-  props: 
-{schedule: data,}
-}
+export async function getServerSideProps() {
+  //provide appContext in order to do 404's
+  const api = "http://localhost:8080/schedule";
+  const res = await fetch(api);
+  const data = await res.json();
+  console.log(data);
+  return {
+    props: { schedule: data },
+  };
 }

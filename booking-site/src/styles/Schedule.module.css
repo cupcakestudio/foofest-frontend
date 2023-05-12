@@ -1,0 +1,41 @@
+.schedule_scenes{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr)
+}
+
+.schedule_timetable_hour {
+  display: block;
+  height: 200px;
+  position: relative;
+  font-size: 16px;
+  color:aqua
+}
+.hourLine_hightlight{
+  color:bisque;
+  line-height: 24px;
+}
+.hour-line:nth-child(2){
+  background-color:bisque;
+  top: 25%;
+}
+.hour-line:nth-child(3){
+  background-color:bisque;
+  top: 50%;
+}
+.hour-line:nth-child(4){
+  top: 75%;
+}
+.bandEvent_section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em
+}
+.Midgard_bandEvent {
+  background-color: aqua;
+}
+.Vanaheim_bandEvent {
+  background-color: rgb(207, 31, 169);
+}
+.Jotunheim_bandEvent {
+  background-color: rgb(72, 132, 127);
+}
