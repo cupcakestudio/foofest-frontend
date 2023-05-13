@@ -1,7 +1,16 @@
 .schedule_scenes{
   display: grid;
-  grid-template-columns: repeat(3, 1fr)
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
 }
+
+/* .schedule_act {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.schedule_act.hide{
+  display:none;
+} */
 
 .schedule_timetable_hour {
   display: block;
@@ -28,7 +37,16 @@
 .bandEvent_section {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1em
+  margin-bottom: 1em;
+  border: 2px solid #a00b0b
+}
+
+.timeSlot_{
+  display: flex;
+  flex-direction: row;
+}
+.timeSlot_ h3:last-child{
+  margin-left: auto;
 }
 .Midgard_bandEvent {
   background-color: aqua;

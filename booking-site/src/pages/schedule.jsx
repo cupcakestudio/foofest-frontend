@@ -1,8 +1,11 @@
 import stylesSchedule from "../styles/Schedule.module.css";
+import { useState } from "react";
 
 export default function Schedule({ schedule }) {
+  const [day, setDay] = useState("monday");
+
   const Midmon = schedule.Midgard.mon;
-  // const Midtue = schedule.Midgard.tue;
+  const Midtue = schedule.Midgard.tue;
   // const Midwed = schedule.Midgard.wed;
   // const Midthu = schedule.Midgard.thu;
   // const Midfri = schedule.Midgard.fri;
@@ -27,15 +30,37 @@ export default function Schedule({ schedule }) {
   // const Vansat = schedule.Vanaheim.sat;
   // const Vansun = schedule.Vanaheim.sun;
 
+  //filter for button days
+  function changeDay(event) {
+    if (event.target.value === "monday") {
+      setDay("monday");
+      console.log(day);
+    }
+    if (event.target.value === "tuesday") {
+      setDay("tuesday");
+      console.log(day);
+    }
+  }
+
   return (
     <>
+      <h1>Schedule</h1>
       {/* schedule timetable */}
       <div className={stylesSchedule.schedule_timetable}>
         <section className="program_day">
           <span className="program_day-date"></span>
         </section>
-        <aside> hej </aside>
+        {/* BUTTONS TO CHOOSE DAYS */}
+        <button onClick={changeDay} value="monday">
+          Monday
+        </button>
+        <button onClick={changeDay} value="tuesday">
+          Tuesday
+        </button>
+        <button onClick={changeDay}>Wednesday</button>
+        <button onClick={changeDay}>Thursday</button>
         {/* schedule scenes grid */}
+        <p>{day}</p>
         <div className={stylesSchedule.schedule_scenes}>
           <div className="schedule_scene">
             <span className="schedule_scene_label"> Midgard</span>
@@ -47,14 +72,16 @@ export default function Schedule({ schedule }) {
                   className={stylesSchedule.bandEvent_section}
                 >
                   <article className={stylesSchedule.Midgard_bandEvent}>
-                    <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
+                    <div className={stylesSchedule.timeSlot_}>
+                      <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
+                    </div>
                     <h2>{bandEvent.act}</h2>
                   </article>
                 </section>
               ))}
             </div>
           </div>
-          <div className="schedule_scene">
+          {/* <div className="schedule_scene">
             <span className="schedule_scene_label"> Vanaheim</span>
             <div className="schedule_act">
               {Vanmon.map((bandEvent) => (
@@ -64,8 +91,10 @@ export default function Schedule({ schedule }) {
                   className={stylesSchedule.bandEvent_section}
                 >
                   <article className={stylesSchedule.Vanaheim_bandEvent}>
-                    <h3>{bandEvent.start}</h3>
-                    <h3>{bandEvent.end}</h3>
+                    <div className={stylesSchedule.timeSlot_}>
+                      <h3>{bandEvent.start}</h3>
+                      <h3>{bandEvent.end}</h3>
+                    </div>
                     <h2>{bandEvent.act}</h2>
                   </article>
                 </section>
@@ -82,14 +111,17 @@ export default function Schedule({ schedule }) {
                   className={stylesSchedule.bandEvent_section}
                 >
                   <article className={stylesSchedule.Jotunheim_bandEvent}>
-                    <h3>{bandEvent.start}</h3>
-                    <h3>{bandEvent.end}</h3>
+                    <div className={stylesSchedule.timeSlot_}>
+                      {" "}
+                      <h3>{bandEvent.start}</h3>
+                      <h3>{bandEvent.end}</h3>
+                    </div>
                     <h2>{bandEvent.act}</h2>
                   </article>
                 </section>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
