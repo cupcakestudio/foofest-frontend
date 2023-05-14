@@ -23,12 +23,12 @@ export default function Schedule({ schedule }) {
 
   //VANAHEIM
   const Vanmon = schedule.Vanaheim.mon;
-  // const Vantue = schedule.Vanaheim.tue;
-  // const Vanwed = schedule.Vanaheim.wed;
-  // const Vanthu = schedule.Vanaheim.thu;
-  // const Vanfri = schedule.Vanaheim.fri;
-  // const Vansat = schedule.Vanaheim.sat;
-  // const Vansun = schedule.Vanaheim.sun;
+  const Vantue = schedule.Vanaheim.tue;
+  const Vanwed = schedule.Vanaheim.wed;
+  const Vanthu = schedule.Vanaheim.thu;
+  const Vanfri = schedule.Vanaheim.fri;
+  const Vansat = schedule.Vanaheim.sat;
+  const Vansun = schedule.Vanaheim.sun;
 
   //filter for button days
   function changeDay(event) {
@@ -37,7 +37,7 @@ export default function Schedule({ schedule }) {
       console.log(day);
     }
     if (event.target.value === "Vanaheim") {
-      setDay("tuesday");
+      setDay("Vanaheim");
       console.log(day);
     }
   }
@@ -231,6 +231,122 @@ export default function Schedule({ schedule }) {
                         className={stylesSchedule.bandEvent_section}
                       >
                         <article className={stylesSchedule.Midgard_bandEvent}>
+                          <div className={stylesSchedule.timeSlot_}>
+                            <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
+                          </div>
+                          <h2>{bandEvent.act}</h2>
+                        </article>
+                      </section>
+                    ))}{" "}
+                  </div>
+                </div>
+              ) : null}
+              {day === "Vanaheim" ? (
+                <div className={stylesSchedule.schema_grid}>
+                  <div className="schedule_act">
+                    {Vanmon.map((bandEvent) => (
+                      <section
+                        key={bandEvent.act}
+                        value={bandEvent.act}
+                        className={stylesSchedule.bandEvent_section}
+                      >
+                        <article className={stylesSchedule.Vanaheim_bandEvent}>
+                          <div className={stylesSchedule.timeSlot_}>
+                            <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
+                          </div>
+                          <h2>{bandEvent.act}</h2>
+                        </article>
+                      </section>
+                    ))}{" "}
+                  </div>
+                  <div className="schedule_act">
+                    {Vantue.map((bandEvent) => (
+                      <section
+                        key={bandEvent.act}
+                        value={bandEvent.act}
+                        className={stylesSchedule.bandEvent_section}
+                      >
+                        <article className={stylesSchedule.Vanaheim_bandEvent}>
+                          <div className={stylesSchedule.timeSlot_}>
+                            <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
+                          </div>
+                          <h2>{bandEvent.act}</h2>
+                        </article>
+                      </section>
+                    ))}{" "}
+                  </div>
+                  <div className="schedule_act">
+                    {Vanwed.map((bandEvent) => (
+                      <section
+                        key={bandEvent.act}
+                        value={bandEvent.act}
+                        className={stylesSchedule.bandEvent_section}
+                      >
+                        <article className={stylesSchedule.Vanaheim_bandEvent}>
+                          <div className={stylesSchedule.timeSlot_}>
+                            <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
+                          </div>
+                          <h2>{bandEvent.act}</h2>
+                        </article>
+                      </section>
+                    ))}{" "}
+                  </div>
+                  <div className="schedule_act">
+                    {Vanthu.map((bandEvent) => (
+                      <section
+                        key={bandEvent.act}
+                        value={bandEvent.act}
+                        className={stylesSchedule.bandEvent_section}
+                      >
+                        <article className={stylesSchedule.Vanaheim_bandEvent}>
+                          <div className={stylesSchedule.timeSlot_}>
+                            <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
+                          </div>
+                          <h2>{bandEvent.act}</h2>
+                        </article>
+                      </section>
+                    ))}{" "}
+                  </div>
+                  <div className="schedule_act">
+                    {Vanfri.map((bandEvent) => (
+                      <section
+                        key={bandEvent.act}
+                        value={bandEvent.act}
+                        className={stylesSchedule.bandEvent_section}
+                      >
+                        <article className={stylesSchedule.Vanaheim_bandEvent}>
+                          <div className={stylesSchedule.timeSlot_}>
+                            <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
+                          </div>
+                          <h2>{bandEvent.act}</h2>
+                        </article>
+                      </section>
+                    ))}{" "}
+                  </div>
+                  <div className="schedule_act">
+                    {Vansat.map((bandEvent) => (
+                      <section
+                        key={bandEvent.act}
+                        value={bandEvent.act}
+                        className={stylesSchedule.bandEvent_section}
+                      >
+                        <article className={stylesSchedule.Vanaheim_bandEvent}>
+                          <div className={stylesSchedule.timeSlot_}>
+                            <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
+                          </div>
+                          <h2>{bandEvent.act}</h2>
+                        </article>
+                      </section>
+                    ))}{" "}
+                  </div>
+                  <div className="schedule_act">
+                    {Vansun.map((bandEvent) => (
+                      <section
+                        key={bandEvent.act}
+                        value={bandEvent.act}
+                        className={stylesSchedule.bandEvent_section}
+                      >
+                        <article className={stylesSchedule.Vanaheim_bandEvent}>
                           <div className={stylesSchedule.timeSlot_}>
                             <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
                           </div>
