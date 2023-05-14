@@ -2,7 +2,7 @@ import stylesSchedule from "../styles/Schedule.module.css";
 import { useState } from "react";
 
 export default function Schedule({ schedule }) {
-  const [day, setDay] = useState("monday");
+  const [day, setDay] = useState("Midgard");
 
   const Midmon = schedule.Midgard.mon;
   const Midtue = schedule.Midgard.tue;
@@ -32,11 +32,11 @@ export default function Schedule({ schedule }) {
 
   //filter for button days
   function changeDay(event) {
-    if (event.target.value === "monday") {
-      setDay("monday");
+    if (event.target.value === "Midgard") {
+      setDay("Midgard");
       console.log(day);
     }
-    if (event.target.value === "tuesday") {
+    if (event.target.value === "Vanaheim") {
       setDay("tuesday");
       console.log(day);
     }
@@ -115,20 +115,27 @@ export default function Schedule({ schedule }) {
             <div className="schedule_scene">
               <span className={stylesSchedule.scene_label}> Monday</span>
               <div className="schedule_act">
-                {Midmon.map((bandEvent) => (
-                  <section
-                    key={bandEvent.act}
-                    value={bandEvent.act}
-                    className={stylesSchedule.bandEvent_section}
-                  >
-                    <article className={stylesSchedule.Midgard_bandEvent}>
-                      <div className={stylesSchedule.timeSlot_}>
-                        <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
-                      </div>
-                      <h2>{bandEvent.act}</h2>
-                    </article>
+                {day === "Midgard" ? (
+                  Midmon.map((bandEvent) => (
+                    <section
+                      key={bandEvent.act}
+                      value={bandEvent.act}
+                      className={stylesSchedule.bandEvent_section}
+                    >
+                      <article className={stylesSchedule.Midgard_bandEvent}>
+                        <div className={stylesSchedule.timeSlot_}>
+                          <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
+                        </div>
+                        <h2>{bandEvent.act}</h2>
+                      </article>
+                    </section>
+                  ))
+                ) : (
+                  <section>
+                    {" "}
+                    <p>Midgard is not selected</p>
                   </section>
-                ))}
+                )}
               </div>
             </div>
             <div className="schedule_scene">
