@@ -4,6 +4,7 @@
 
 .act_wrapper{
 padding-left: 80px;
+padding-right: 20px;
 }
  .days_program {
   display: flex;
@@ -13,11 +14,17 @@ padding-left: 80px;
   right: 0;
   bottom: 0;
  }
-.schedule_scenes{
+
+ .day_label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+ }
+.schema_grid{
   grid-area: 1/2;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5em;
+  grid-template-columns: repeat(7,1fr);
+  gap: 2em;
 
 }
 
@@ -43,7 +50,7 @@ padding-left: 80px;
   font-size: 16px;
   color:aqua
 }
-.hourLine_Quarter{
+.hourLine_Quarter, .hourLine_Quarter_highlight{
   display: block;
   position: absolute;
   top: 0;
@@ -55,7 +62,8 @@ padding-left: 80px;
 
 /* start of hour line */
 .hourLine_Quarter_highlight {
-  border-top:5px solid bisque;
+  border-top:none;
+  border-bottom: 4px solid bisque; 
   line-height: 50px;
 }
 .hourLine_Quarter:nth-child(2){
