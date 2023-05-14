@@ -46,84 +46,136 @@ export default function Schedule({ schedule }) {
     <>
       <h1>Schedule</h1>
       {/* schedule timetable */}
-      <div className={stylesSchedule.schedule_timetable}>
-        <section className="program_day">
-          <span className="program_day-date"></span>
+      {/* BUTTONS TO CHOOSE DAYS */}
+      <button onClick={changeDay} value="Midgard">
+        Midgard
+      </button>
+      <button onClick={changeDay} value="Vanaheim">
+        Vanaheim
+      </button>
+      <button onClick={changeDay} value="Jotunheim">
+        Jotunheim
+      </button>{" "}
+      <p>{day}</p>
+      <br></br>
+      {/* <button onClick={changeDay}>Thursday</button> */}
+      {/* schedule scenes grid 
+      Indpisration from tinderbox grid and hour indication setup:
+      https://tinderbox.dk/program/?gad=1&gclid=CjwKCAjwjYKjBhB5EiwAiFdSfiRSNWo1SbtqktdsBSz9BluuzPH0NGo6nI9zuTTo43puyqPPzRvPhBoCFG4QAvD_BwE*/}
+      <div className={stylesSchedule.timetable}>
+        <section className="10:00_hour">
+          <span className={stylesSchedule.timetable_hour}>
+            10:00
+            <span className={stylesSchedule.hourLine_Quarter_highlight}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+          </span>
         </section>
-        {/* BUTTONS TO CHOOSE DAYS */}
-        <button onClick={changeDay} value="monday">
-          Monday
-        </button>
-        <button onClick={changeDay} value="tuesday">
-          Tuesday
-        </button>
-        <button onClick={changeDay}>Wednesday</button>
-        <button onClick={changeDay}>Thursday</button>
-        {/* schedule scenes grid */}
-        <p>{day}</p>
-        <div className={stylesSchedule.schedule_scenes}>
-          <div className="schedule_scene">
-            <span className="schedule_scene_label"> Midgard</span>
-            <div className="schedule_act">
-              {Midmon.map((bandEvent) => (
-                <section
-                  key={bandEvent.act}
-                  value={bandEvent.act}
-                  className={stylesSchedule.bandEvent_section}
-                >
-                  <article className={stylesSchedule.Midgard_bandEvent}>
-                    <div className={stylesSchedule.timeSlot_}>
-                      <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
-                    </div>
-                    <h2>{bandEvent.act}</h2>
-                  </article>
-                </section>
-              ))}
-            </div>
-          </div>
-          {/* <div className="schedule_scene">
-            <span className="schedule_scene_label"> Vanaheim</span>
-            <div className="schedule_act">
-              {Vanmon.map((bandEvent) => (
-                <section
-                  key={bandEvent.act}
-                  value={bandEvent.act}
-                  className={stylesSchedule.bandEvent_section}
-                >
-                  <article className={stylesSchedule.Vanaheim_bandEvent}>
-                    <div className={stylesSchedule.timeSlot_}>
-                      <h3>{bandEvent.start}</h3>
-                      <h3>{bandEvent.end}</h3>
-                    </div>
-                    <h2>{bandEvent.act}</h2>
-                  </article>
-                </section>
-              ))}
-            </div>
-          </div>
-          <div className="schedule_scene">
-            <span className="schedule_scene_label"> Jotunheim</span>
-            <div className="schedule_act">
-              {Jotmon.map((bandEvent) => (
-                <section
-                  key={bandEvent.act}
-                  value={bandEvent.act}
-                  className={stylesSchedule.bandEvent_section}
-                >
-                  <article className={stylesSchedule.Jotunheim_bandEvent}>
-                    <div className={stylesSchedule.timeSlot_}>
-                      {" "}
-                      <h3>{bandEvent.start}</h3>
-                      <h3>{bandEvent.end}</h3>
-                    </div>
-                    <h2>{bandEvent.act}</h2>
-                  </article>
-                </section>
-              ))}
-            </div>
-          </div> */}
-        </div>
+        <section className="11:00_hour">
+          <span className={stylesSchedule.timetable_hour}>
+            11:00
+            <span className={stylesSchedule.hourLine_Quarter_highlight}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+          </span>
+        </section>
+        <section className="12:00_hour">
+          <span className={stylesSchedule.timetable_hour}>
+            12:00
+            <span className={stylesSchedule.hourLine_Quarter_highlight}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+          </span>
+        </section>
+        <section className="13:00_hour">
+          <span className={stylesSchedule.timetable_hour}>
+            13:00
+            <span className={stylesSchedule.hourLine_Quarter_highlight}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+          </span>
+        </section>
+        <section className="14:00_hour">
+          <span className={stylesSchedule.timetable_hour}>
+            14:00
+            <span className={stylesSchedule.hourLine_Quarter_highlight}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+          </span>
+        </section>
       </div>
+      <section className={stylesSchedule.days_program}>
+        <div className={stylesSchedule.act_wrapper}>
+          <div className={stylesSchedule.schedule_scenes}>
+            <div className="schedule_scene">
+              <span className={stylesSchedule.scene_label}> Monday</span>
+              <div className="schedule_act">
+                {Midmon.map((bandEvent) => (
+                  <section
+                    key={bandEvent.act}
+                    value={bandEvent.act}
+                    className={stylesSchedule.bandEvent_section}
+                  >
+                    <article className={stylesSchedule.Midgard_bandEvent}>
+                      <div className={stylesSchedule.timeSlot_}>
+                        <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
+                      </div>
+                      <h2>{bandEvent.act}</h2>
+                    </article>
+                  </section>
+                ))}
+              </div>
+            </div>
+            <div className="schedule_scene">
+              <span className="schedule_scene_label"> Tuesday</span>
+              {/* <div className="schedule_act">
+                {Midtue.map((bandEvent) => (
+                  <section
+                    key={bandEvent.act}
+                    value={bandEvent.act}
+                    className={stylesSchedule.bandEvent_section}
+                  >
+                    <article className={stylesSchedule.Vanaheim_bandEvent}>
+                      <div className={stylesSchedule.timeSlot_}>
+                        <h3>{bandEvent.start}</h3>
+                        <h3>{bandEvent.end}</h3>
+                      </div>
+                      <h2>{bandEvent.act}</h2>
+                    </article>
+                  </section>
+                ))}
+              </div> */}
+            </div>
+            {/*
+            <div className="schedule_scene">
+              <span className="schedule_scene_label"> Jotunheim</span>
+              <div className="schedule_act">
+                {Jotmon.map((bandEvent) => (
+                  <section
+                    key={bandEvent.act}
+                    value={bandEvent.act}
+                    className={stylesSchedule.bandEvent_section}
+                  >
+                    <article className={stylesSchedule.Jotunheim_bandEvent}>
+                      <div className={stylesSchedule.timeSlot_}>
+                        {" "}
+                        <h3>{bandEvent.start}</h3>
+                        <h3>{bandEvent.end}</h3>
+                      </div>
+                      <h2>{bandEvent.act}</h2>
+                    </article>
+                  </section>
+                ))}
+              </div>
+            </div> */}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
