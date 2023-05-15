@@ -5,11 +5,12 @@
 .act_wrapper{
 padding-left: 80px;
 padding-right: 20px;
+
 }
  .days_program {
   display: flex;
   position: absolute;
-  top: 90px;
+  top: 75px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -28,10 +29,11 @@ padding-right: 20px;
 
 }
 
-/* .schedule_act {
-  display: grid;
-  grid-template-columns: 1fr;
-}
+ .schedule_act {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}/*
 .schedule_act.hide{
   display:none;
 } */
@@ -42,13 +44,15 @@ padding-right: 20px;
 .timetable{
   display:grid;
   grid-template-columns: 1fr;
+  margin: 20px;
 }
 .timetable_hour {
   display: block;
-  height: 200px;
+  height: 150px;
   position: relative;
   font-size: 16px;
-  color:aqua
+  font-weight: bold;
+  color:rgb(31, 31, 31)
 }
 .hourLine_Quarter, .hourLine_Quarter_highlight{
   display: block;
@@ -67,33 +71,38 @@ padding-right: 20px;
   line-height: 50px;
 }
 .hourLine_Quarter:nth-child(2){
-  
-  top: 25%;
-}
-.hourLine_Quarter:nth-child(3){
-  
+  border-top:3px dashed bisque;
   top: 50%;
 }
-.hourLine_Quarter:nth-child(4){
-  top: 75%;
-}
+
+
 .bandEvent_section {
   display: flex;
   flex-direction: column;
   margin-bottom: 1em;
-  border: 2px solid #a00b0b
+  /* border: 2px solid #a00b0b */
 }
-
+/* time that each band plays */
 .timeSlot_{
   display: flex;
   flex-direction: row;
+  flex-grow: 1;
 }
 .timeSlot_ h3:last-child{
   margin-left: auto;
 }
 .Midgard_bandEvent {
   background-color: aqua;
+  height: 150px;
 }
+/* .bandEvent_section:first-child{ 
+  top: 7.69230769231%;
+  bottom: 84.6153846154%;
+  position: absolute;
+
+
+} */
+
 .Vanaheim_bandEvent {
   background-color: rgb(207, 31, 169);
 }

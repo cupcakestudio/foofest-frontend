@@ -2,7 +2,7 @@ import stylesSchedule from "../styles/Schedule.module.css";
 import { useState } from "react";
 
 export default function Schedule({ schedule }) {
-  const [day, setDay] = useState("Midgard");
+  const [stage, setStage] = useState("Midgard");
 
   const Midmon = schedule.Midgard.mon;
   const Midtue = schedule.Midgard.tue;
@@ -14,12 +14,12 @@ export default function Schedule({ schedule }) {
 
   //JOTUNHEIM
   const Jotmon = schedule.Jotunheim.mon;
-  // const Jottue = schedule.Jotunheim.tue;
-  // const Jotwed = schedule.Jotunheim.wed;
-  // const Jotthu = schedule.Jotunheim.thu;
-  // const Jotfri = schedule.Jotunheim.fri;
-  // const Jotsat = schedule.Jotunheim.sat;
-  // const Jotsun = schedule.Jotunheim.sun;
+  const Jottue = schedule.Jotunheim.tue;
+  const Jotwed = schedule.Jotunheim.wed;
+  const Jotthu = schedule.Jotunheim.thu;
+  const Jotfri = schedule.Jotunheim.fri;
+  const Jotsat = schedule.Jotunheim.sat;
+  const Jotsun = schedule.Jotunheim.sun;
 
   //VANAHEIM
   const Vanmon = schedule.Vanaheim.mon;
@@ -33,12 +33,16 @@ export default function Schedule({ schedule }) {
   //filter for button days
   function changeDay(event) {
     if (event.target.value === "Midgard") {
-      setDay("Midgard");
-      console.log(day);
+      setStage("Midgard");
+      console.log(stage);
     }
     if (event.target.value === "Vanaheim") {
-      setDay("Vanaheim");
-      console.log(day);
+      setStage("Vanaheim");
+      console.log(stage);
+    }
+    if (event.target.value === "Jotunheim") {
+      setStage("Jotunheim");
+      console.log(stage);
     }
   }
 
@@ -56,7 +60,7 @@ export default function Schedule({ schedule }) {
       <button onClick={changeDay} value="Jotunheim">
         Jotunheim
       </button>{" "}
-      <p>{day}</p>
+      <p>{stage}</p>
       <br></br>
       {/* <button onClick={changeDay}>Thursday</button> */}
       {/* schedule scenes grid 
@@ -64,21 +68,45 @@ export default function Schedule({ schedule }) {
       https://tinderbox.dk/program/?gad=1&gclid=CjwKCAjwjYKjBhB5EiwAiFdSfiRSNWo1SbtqktdsBSz9BluuzPH0NGo6nI9zuTTo43puyqPPzRvPhBoCFG4QAvD_BwE*/}
       {/* times section */}
       <div className={stylesSchedule.timetable}>
+        <section className="00:00_hour">
+          <span className={stylesSchedule.timetable_hour}>
+            00:00
+            <span className={stylesSchedule.hourLine_Quarter_highlight}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+          </span>
+        </section>
+        <section className="02:00_hour">
+          <span className={stylesSchedule.timetable_hour}>
+            02:00
+            <span className={stylesSchedule.hourLine_Quarter_highlight}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+          </span>
+        </section>
+        <section className="04:00_hour">
+          <span className={stylesSchedule.timetable_hour}>
+            04:00
+            <span className={stylesSchedule.hourLine_Quarter_highlight}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+          </span>
+        </section>
+        <section className="06:00_hour">
+          <span className={stylesSchedule.timetable_hour}>
+            06:00
+            <span className={stylesSchedule.hourLine_Quarter_highlight}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+          </span>
+        </section>
+        <section className="08:00_hour">
+          <span className={stylesSchedule.timetable_hour}>
+            08:00
+            <span className={stylesSchedule.hourLine_Quarter_highlight}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+          </span>
+        </section>
         <section className="10:00_hour">
           <span className={stylesSchedule.timetable_hour}>
             10:00
             <span className={stylesSchedule.hourLine_Quarter_highlight}></span>
-            <span className={stylesSchedule.hourLine_Quarter}></span>
-            <span className={stylesSchedule.hourLine_Quarter}></span>
-            <span className={stylesSchedule.hourLine_Quarter}></span>
-          </span>
-        </section>
-        <section className="11:00_hour">
-          <span className={stylesSchedule.timetable_hour}>
-            11:00
-            <span className={stylesSchedule.hourLine_Quarter_highlight}></span>
-            <span className={stylesSchedule.hourLine_Quarter}></span>
-            <span className={stylesSchedule.hourLine_Quarter}></span>
             <span className={stylesSchedule.hourLine_Quarter}></span>
           </span>
         </section>
@@ -91,21 +119,38 @@ export default function Schedule({ schedule }) {
             <span className={stylesSchedule.hourLine_Quarter}></span>
           </span>
         </section>
-        <section className="13:00_hour">
-          <span className={stylesSchedule.timetable_hour}>
-            13:00
-            <span className={stylesSchedule.hourLine_Quarter_highlight}></span>
-            <span className={stylesSchedule.hourLine_Quarter}></span>
-            <span className={stylesSchedule.hourLine_Quarter}></span>
-            <span className={stylesSchedule.hourLine_Quarter}></span>
-          </span>
-        </section>
         <section className="14:00_hour">
           <span className={stylesSchedule.timetable_hour}>
             14:00
             <span className={stylesSchedule.hourLine_Quarter_highlight}></span>
             <span className={stylesSchedule.hourLine_Quarter}></span>
+          </span>
+        </section>
+        <section className="16:00_hour">
+          <span className={stylesSchedule.timetable_hour}>
+            16:00
+            <span className={stylesSchedule.hourLine_Quarter_highlight}></span>
             <span className={stylesSchedule.hourLine_Quarter}></span>
+          </span>
+        </section>
+        <section className="18:00_hour">
+          <span className={stylesSchedule.timetable_hour}>
+            18:00
+            <span className={stylesSchedule.hourLine_Quarter_highlight}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+          </span>
+        </section>
+        <section className="20:00_hour">
+          <span className={stylesSchedule.timetable_hour}>
+            20:00
+            <span className={stylesSchedule.hourLine_Quarter_highlight}></span>
+            <span className={stylesSchedule.hourLine_Quarter}></span>
+          </span>
+        </section>
+        <section className="22:00_hour">
+          <span className={stylesSchedule.timetable_hour}>
+            22:00
+            <span className={stylesSchedule.hourLine_Quarter_highlight}></span>
             <span className={stylesSchedule.hourLine_Quarter}></span>
           </span>
         </section>
@@ -125,9 +170,9 @@ export default function Schedule({ schedule }) {
               <span className={stylesSchedule.scene_label}> Sunday</span>
             </section>
             <div>
-              {day === "Midgard" ? (
+              {stage === "Midgard" ? (
                 <div className={stylesSchedule.schema_grid}>
-                  <div className="schedule_act">
+                  <div className={stylesSchedule.schedule_act}>
                     {Midmon.map((bandEvent) => (
                       <section
                         key={bandEvent.act}
@@ -143,7 +188,7 @@ export default function Schedule({ schedule }) {
                       </section>
                     ))}{" "}
                   </div>
-                  <div className="schedule_act">
+                  <div className={stylesSchedule.schedule_act}>
                     {Midtue.map((bandEvent) => (
                       <section
                         key={bandEvent.act}
@@ -159,7 +204,7 @@ export default function Schedule({ schedule }) {
                       </section>
                     ))}{" "}
                   </div>
-                  <div className="schedule_act">
+                  <div className={stylesSchedule.schedule_act}>
                     {Midwed.map((bandEvent) => (
                       <section
                         key={bandEvent.act}
@@ -175,7 +220,7 @@ export default function Schedule({ schedule }) {
                       </section>
                     ))}{" "}
                   </div>
-                  <div className="schedule_act">
+                  <div className={stylesSchedule.schedule_act}>
                     {Midthu.map((bandEvent) => (
                       <section
                         key={bandEvent.act}
@@ -191,7 +236,7 @@ export default function Schedule({ schedule }) {
                       </section>
                     ))}{" "}
                   </div>
-                  <div className="schedule_act">
+                  <div className={stylesSchedule.schedule_act}>
                     {Midfri.map((bandEvent) => (
                       <section
                         key={bandEvent.act}
@@ -207,7 +252,7 @@ export default function Schedule({ schedule }) {
                       </section>
                     ))}{" "}
                   </div>
-                  <div className="schedule_act">
+                  <div className={stylesSchedule.schedule_act}>
                     {Midsat.map((bandEvent) => (
                       <section
                         key={bandEvent.act}
@@ -223,7 +268,7 @@ export default function Schedule({ schedule }) {
                       </section>
                     ))}{" "}
                   </div>
-                  <div className="schedule_act">
+                  <div className={stylesSchedule.schedule_act}>
                     {Midsun.map((bandEvent) => (
                       <section
                         key={bandEvent.act}
@@ -241,9 +286,10 @@ export default function Schedule({ schedule }) {
                   </div>
                 </div>
               ) : null}
-              {day === "Vanaheim" ? (
+              {/* VANAHEIM */}
+              {stage === "Vanaheim" ? (
                 <div className={stylesSchedule.schema_grid}>
-                  <div className="schedule_act">
+                  <div className={stylesSchedule.schedule_act}>
                     {Vanmon.map((bandEvent) => (
                       <section
                         key={bandEvent.act}
@@ -259,7 +305,7 @@ export default function Schedule({ schedule }) {
                       </section>
                     ))}{" "}
                   </div>
-                  <div className="schedule_act">
+                  <div className={stylesSchedule.schedule_act}>
                     {Vantue.map((bandEvent) => (
                       <section
                         key={bandEvent.act}
@@ -275,7 +321,7 @@ export default function Schedule({ schedule }) {
                       </section>
                     ))}{" "}
                   </div>
-                  <div className="schedule_act">
+                  <div className={stylesSchedule.schedule_act}>
                     {Vanwed.map((bandEvent) => (
                       <section
                         key={bandEvent.act}
@@ -291,7 +337,7 @@ export default function Schedule({ schedule }) {
                       </section>
                     ))}{" "}
                   </div>
-                  <div className="schedule_act">
+                  <div className={stylesSchedule.schedule_act}>
                     {Vanthu.map((bandEvent) => (
                       <section
                         key={bandEvent.act}
@@ -307,7 +353,7 @@ export default function Schedule({ schedule }) {
                       </section>
                     ))}{" "}
                   </div>
-                  <div className="schedule_act">
+                  <div className={stylesSchedule.schedule_act}>
                     {Vanfri.map((bandEvent) => (
                       <section
                         key={bandEvent.act}
@@ -323,7 +369,7 @@ export default function Schedule({ schedule }) {
                       </section>
                     ))}{" "}
                   </div>
-                  <div className="schedule_act">
+                  <div className={stylesSchedule.schedule_act}>
                     {Vansat.map((bandEvent) => (
                       <section
                         key={bandEvent.act}
@@ -339,7 +385,7 @@ export default function Schedule({ schedule }) {
                       </section>
                     ))}{" "}
                   </div>
-                  <div className="schedule_act">
+                  <div className={stylesSchedule.schedule_act}>
                     {Vansun.map((bandEvent) => (
                       <section
                         key={bandEvent.act}
@@ -347,6 +393,123 @@ export default function Schedule({ schedule }) {
                         className={stylesSchedule.bandEvent_section}
                       >
                         <article className={stylesSchedule.Vanaheim_bandEvent}>
+                          <div className={stylesSchedule.timeSlot_}>
+                            <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
+                          </div>
+                          <h2>{bandEvent.act}</h2>
+                        </article>
+                      </section>
+                    ))}{" "}
+                  </div>
+                </div>
+              ) : null}
+              {/* JOTUNHEIM */}
+              {stage === "Jotunheim" ? (
+                <div className={stylesSchedule.schema_grid}>
+                  <div className={stylesSchedule.schedule_act}>
+                    {Jotmon.map((bandEvent) => (
+                      <section
+                        key={bandEvent.act}
+                        value={bandEvent.act}
+                        className={stylesSchedule.bandEvent_section}
+                      >
+                        <article className={stylesSchedule.Jotunheim_bandEvent}>
+                          <div className={stylesSchedule.timeSlot_}>
+                            <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
+                          </div>
+                          <h2>{bandEvent.act}</h2>
+                        </article>
+                      </section>
+                    ))}{" "}
+                  </div>
+                  <div className={stylesSchedule.schedule_act}>
+                    {Jottue.map((bandEvent) => (
+                      <section
+                        key={bandEvent.act}
+                        value={bandEvent.act}
+                        className={stylesSchedule.bandEvent_section}
+                      >
+                        <article className={stylesSchedule.Jotunheim_bandEvent}>
+                          <div className={stylesSchedule.timeSlot_}>
+                            <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
+                          </div>
+                          <h2>{bandEvent.act}</h2>
+                        </article>
+                      </section>
+                    ))}{" "}
+                  </div>
+                  <div className={stylesSchedule.schedule_act}>
+                    {Jotwed.map((bandEvent) => (
+                      <section
+                        key={bandEvent.act}
+                        value={bandEvent.act}
+                        className={stylesSchedule.bandEvent_section}
+                      >
+                        <article className={stylesSchedule.Jotunheim_bandEvent}>
+                          <div className={stylesSchedule.timeSlot_}>
+                            <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
+                          </div>
+                          <h2>{bandEvent.act}</h2>
+                        </article>
+                      </section>
+                    ))}{" "}
+                  </div>
+                  <div className={stylesSchedule.schedule_act}>
+                    {Jotthu.map((bandEvent) => (
+                      <section
+                        key={bandEvent.act}
+                        value={bandEvent.act}
+                        className={stylesSchedule.bandEvent_section}
+                      >
+                        <article className={stylesSchedule.Jotunheim_bandEvent}>
+                          <div className={stylesSchedule.timeSlot_}>
+                            <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
+                          </div>
+                          <h2>{bandEvent.act}</h2>
+                        </article>
+                      </section>
+                    ))}{" "}
+                  </div>
+                  <div className={stylesSchedule.schedule_act}>
+                    {Jotfri.map((bandEvent) => (
+                      <section
+                        key={bandEvent.act}
+                        value={bandEvent.act}
+                        className={stylesSchedule.bandEvent_section}
+                      >
+                        <article className={stylesSchedule.Jotunheim_bandEvent}>
+                          <div className={stylesSchedule.timeSlot_}>
+                            <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
+                          </div>
+                          <h2>{bandEvent.act}</h2>
+                        </article>
+                      </section>
+                    ))}{" "}
+                  </div>
+                  <div className={stylesSchedule.schedule_act}>
+                    {Jotsat.map((bandEvent) => (
+                      <section
+                        key={bandEvent.act}
+                        value={bandEvent.act}
+                        className={stylesSchedule.bandEvent_section}
+                      >
+                        <article className={stylesSchedule.Jotunheim_bandEvent}>
+                          <div className={stylesSchedule.timeSlot_}>
+                            <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
+                          </div>
+                          <h2>{bandEvent.act}</h2>
+                        </article>
+                      </section>
+                    ))}{" "}
+                  </div>
+                  <div className={stylesSchedule.schedule_act}>
+                    {Jotsun.map((bandEvent) => (
+                      <section
+                        key={bandEvent.act}
+                        value={bandEvent.act}
+                        className={stylesSchedule.bandEvent_section}
+                      >
+                        <article className={stylesSchedule.Jotunheim_bandEvent}>
                           <div className={stylesSchedule.timeSlot_}>
                             <h3>{bandEvent.start}</h3> <h3>{bandEvent.end}</h3>
                           </div>
