@@ -33,6 +33,7 @@ padding-right: 20px;
   display: flex;
   flex-direction: column;
   height: fit-content;
+  padding: 0.5em;
 }/*
 .schedule_act.hide{
   display:none;
@@ -79,8 +80,28 @@ padding-right: 20px;
 .bandEvent_section {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1em;
-  /* border: 2px solid #a00b0b */
+  margin-bottom: 1.3em;
+  width: 158px;
+  height: min-content
+
+}
+.Midgard_bandEvent {
+  background-color: aqua;
+  height: 130px;
+}
+/* .bandEvent_section:nth-of-type(2) {
+  background-color: white;
+  height: 130px;
+} */
+
+
+.Vanaheim_bandEvent {
+  background-color: rgb(207, 31, 169);
+  height: 130px;
+}
+.Jotunheim_bandEvent {
+  background-color: rgb(72, 132, 127);
+  height: 130px;
 }
 /* time that each band plays */
 .timeSlot_{
@@ -90,22 +111,4 @@ padding-right: 20px;
 }
 .timeSlot_ h3:last-child{
   margin-left: auto;
-}
-.Midgard_bandEvent {
-  background-color: aqua;
-  height: 150px;
-}
-/* .bandEvent_section:first-child{ 
-  top: 7.69230769231%;
-  bottom: 84.6153846154%;
-  position: absolute;
-
-
-} */
-
-.Vanaheim_bandEvent {
-  background-color: rgb(207, 31, 169);
-}
-.Jotunheim_bandEvent {
-  background-color: rgb(72, 132, 127);
 }
