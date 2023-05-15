@@ -1,3 +1,15 @@
+:root {
+  --heading: condor-extended, sans-serif;
+  --paragraph: eurostile, sans-serif;
+  --color-default: #000000;
+  --h1: 8rem;
+  --h2: 6.2rem;
+  --h3: 5rem;
+  --h4: 3.125rem;
+  --p: 3.125rem;
+  --p-footer: 1.875rem;
+}
+
 h2 {
   font-family: var(--heading);
 }
@@ -9,16 +21,4 @@ h4 {
 p {
   font-family: var(--paragraph);
   font-size: var(--p);
-}
-
-:root {
-  --heading: condor-extended, sans-serif;
-  --paragraph: eurostile, sans-serif;
-  --color-default: #000000;
-  --h1: 8rem;
-  --h2: 6.2rem;
-  --h3: 5rem;
-  --h4: 3.125rem;
-  --p: 3.125rem;
-  --p-footer: 1.875rem;
 }
