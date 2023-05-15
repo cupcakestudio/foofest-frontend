@@ -12,6 +12,7 @@
 
 h2 {
   font-family: var(--heading);
+  font-size: var(--h2);
 }
 
 h4 {
