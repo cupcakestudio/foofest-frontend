@@ -1,4 +1,6 @@
 import styles from "@/styles/Home.module.css";
+// import Button from "@mui/material";
+import Landing from "@/components/Landing";
 import Head from "next/head";
 import ProgramSite from "@/components/programSite";
 
@@ -13,7 +15,8 @@ export default function Home({ bandData }) {
         <link rel="stylesheet" href="https://use.typekit.net/bxq7sds.css" />
         <link rel="icon" href="" />
       </Head>
-      <ProgramSite />
+      <Landing />
+      {/* <ProgramSite /> */}
       {bandData.map((perBand) => (
         //key & value fortæller hvad bands sorteres på
         <section key={bandData.slug} value={bandData.slug}>

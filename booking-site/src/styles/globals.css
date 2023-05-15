@@ -10,6 +10,12 @@
   --p-footer: 1.875rem;
 }
 
+h1 {
+  font-family: var(--heading);
+  font-size: var(--h1);
+  text-align: center;
+}
+
 h2 {
   font-family: var(--heading);
   font-size: var(--h2);
@@ -22,4 +28,15 @@ h4 {
 p {
   font-family: var(--paragraph);
   font-size: var(--p);
+}
+
+button {
+  border: #000 solid 2px;
+  width: 20rem;
+  height: 3rem;
+  background-color: transparent;
+}
+
+span {
+  font-weight: bold;
 }

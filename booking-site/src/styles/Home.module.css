@@ -1,0 +1,21 @@
+/* LANDIGN */
+
+.date {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.date p {
+  font-size: 1.8rem;
+}
+
+.landingButtons {
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+  row-gap: 1rem;
+}
+.landingButtons button:hover {
+  background-color: white;
+  cursor: pointer;
+}
