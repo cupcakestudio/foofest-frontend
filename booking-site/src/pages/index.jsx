@@ -1,5 +1,6 @@
 import styles from "@/styles/Home.module.css";
 import Head from "next/head";
+import ProgramSite from "@/components/programSite";
 
 export default function Home({ bandData }) {
   console.log(bandData);
@@ -12,7 +13,7 @@ export default function Home({ bandData }) {
         <link rel="stylesheet" href="https://use.typekit.net/bxq7sds.css" />
         <link rel="icon" href="" />
       </Head>
-
+      <ProgramSite />
       {bandData.map((perBand) => (
         //key & value fortæller hvad bands sorteres på
         <section key={bandData.slug} value={bandData.slug}>

@@ -1,10 +1,11 @@
-import '@/styles/globals.css'
-import App from 'next/app'
+import "@/styles/globals.css";
+import { ProgramProvider } from "../contexts/programContext";
+import App from "next/app";
 
-export default function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default function MyApp({ Component, pageProps, bandData }) {
+  return (
+    <ProgramProvider value={bandData}>
+      <Component {...pageProps} />;
+    </ProgramProvider>
+  );
 }
-
-
-
-  
