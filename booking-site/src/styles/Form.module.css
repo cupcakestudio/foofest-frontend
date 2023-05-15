@@ -1,3 +1,12 @@
 .formWrapper {
   display: grid;
 }
+
+/* retter label tekst på dropdown */
+.dropdownLabel {
+  position: relative;
+  display: inline-flex;
+  left: 0;
+  bottom: 0;
+  top: 20px;
+}

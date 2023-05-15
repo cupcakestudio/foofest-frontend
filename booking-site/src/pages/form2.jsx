@@ -13,27 +13,33 @@ export default function Form({ spots }) {
 
   return (
     <>
-      <h1>Tickets</h1>
+      <h1>Ticket details</h1>
       <form>
         <FormControl variant="filled">
           <Card>
             <CardContent className={styles.formWrapper}>
+              <h2>Tickets</h2>
               <TextField label="Date" />
               <TextField label="Tickets" />
               <TextField label="Ticket Type" />
-
-              <InputLabel id="dropdown-label" label="spots" placeholder="form" style={{ position: "relative" }}>
-                Choose spots
-              </InputLabel>
-              {/* onChange gør det samme som event.target.value */}
-              <Select labelId="dropdown-label" id="dropdowm" label="Available spots" value={(selectedSpot, selectedArea)} onChange={handleChange}>
+              <h2>Available Spots:</h2>
+              <FormGroup labelId="dropdown-label" id="dropdowm" label="Available spots" value={(selectedSpot, selectedArea)} onChange={handleChange}>
                 {spots.map((spot, availability) => (
-                  <MenuItem key={availability} value={(spot.available, spot.area)}>
+                  <p key={availability} value={(spot.available, spot.area)}>
                     {spot.area + ": " + spot.available}
-                  </MenuItem>
+                  </p>
                 ))}
-              </Select>
-
+                <InputLabel id="dropdown-label" label="spots" placeholder="form" className={styles.dropdownLabel} style={{ position: "relative" }}>
+                  Choose Camp
+                </InputLabel>
+                <Select labelId="dropdown-label" id="dropdowm" label="Available spots" value={(selectedSpot, selectedArea)} onChange={handleChange}>
+                  {spots.map((spot, availability) => (
+                    <MenuItem key={availability} value={(spot.available, spot.area)}>
+                      {spot.area}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormGroup>
               <h2>Other options</h2>
               <FormGroup>
                 <FormControlLabel control={<Checkbox />} label="Green Option" />
