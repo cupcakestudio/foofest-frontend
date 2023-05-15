@@ -21,11 +21,15 @@ padding-right: 20px;
   flex-direction: row;
   justify-content: space-around;
  }
+ .schema_container{
+  overflow-x: auto;
+ }
 .schema_grid{
   grid-area: 1/2;
   display: grid;
-  grid-template-columns: repeat(7,1fr);
-  gap: 2em;
+  grid-template-columns: repeat(7, minmax(100px, 1fr));
+  gap: 1.5em;
+  overflow-x: scroll;
 
 }
 
@@ -34,6 +38,7 @@ padding-right: 20px;
   flex-direction: column;
   height: fit-content;
   padding: 0.5em;
+  
 }/*
 .schedule_act.hide{
   display:none;
@@ -81,12 +86,16 @@ padding-right: 20px;
   display: flex;
   flex-direction: column;
   margin-bottom: 1.3em;
-  width: 158px;
+  width: 140px;
   height: min-content
 
 }
 .Midgard_bandEvent {
   background-color: aqua;
+  height: 130px;
+}
+.Midgard_bandEvent_break, .Vanaheim_bandEvent_break, .Jotunheim_bandEvent_break {
+  background-color: rgb(120, 132, 121);
   height: 130px;
 }
 /* .bandEvent_section:nth-of-type(2) {
@@ -111,4 +120,25 @@ padding-right: 20px;
 }
 .timeSlot_ h3:last-child{
   margin-left: auto;
+}
+
+
+/* scrollable test */
+.scrollable-grid-container {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.scrollable-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+  padding: 10px;
+  white-space: nowrap;
+}
+
+.grid-item {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
 }
