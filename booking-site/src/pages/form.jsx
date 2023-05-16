@@ -11,6 +11,7 @@ import {
   FormControlLabel,
   MenuItem,
 } from "@mui/material";
+
 import styles from "../styles/Form.module.css";
 
 export default function Form({ spots }) {
@@ -32,6 +33,8 @@ export default function Form({ spots }) {
               <h2>Tickets</h2>
               {/* <DatePicker /> */}
               <TextField label="Tickets" />
+              <TextField type="date"></TextField>
+              <TextField type="number" label="Number of tickets" />
 
               <InputLabel
                 id="dropdown-label"
@@ -40,11 +43,11 @@ export default function Form({ spots }) {
                 className={styles.dropdownLabel}
                 style={{ position: "relative" }}
               >
-                Choose Tickets
+                Choose ticket type
               </InputLabel>
               <Select
                 labelId="ticket-type"
-                id="dropdown"
+                id="dropdowm"
                 label="Ticket-Type"
                 value={(selectedSpot, selectedArea)}
                 onChange={handleChange}
