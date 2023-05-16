@@ -51,15 +51,17 @@ export default function Schedule({ schedule }) {
       <h1>Schedule</h1>
       {/* schedule timetable */}
       {/* BUTTONS TO CHOOSE DAYS */}
-      <button onClick={changeDay} value="Midgard">
-        Midgard
-      </button>
-      <button onClick={changeDay} value="Vanaheim">
-        Vanaheim
-      </button>
-      <button onClick={changeDay} value="Jotunheim">
-        Jotunheim
-      </button>{" "}
+      <div className={stylesSchedule.stages}>
+        <button onClick={changeDay} value="Midgard">
+          Midgard
+        </button>
+        <button onClick={changeDay} value="Vanaheim">
+          Vanaheim
+        </button>
+        <button onClick={changeDay} value="Jotunheim">
+          Jotunheim
+        </button>
+      </div>
       <p>{stage}</p>
       <br></br>
       {/* <button onClick={changeDay}>Thursday</button> */}
