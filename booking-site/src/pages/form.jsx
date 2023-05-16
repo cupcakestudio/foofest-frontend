@@ -19,7 +19,7 @@ export default function Form({ spots }) {
           <Card>
             <CardContent className={styles.formWrapper}>
               <h2>Tickets</h2>
-              <TextField label="Date" />
+              <DatePicker />
               <TextField label="Tickets" />
               <TextField label="Ticket Type" />
               <h2>Available Spots:</h2>
