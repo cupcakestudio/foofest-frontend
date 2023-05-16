@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { InputLabel, FormControl, Card, CardContent, TextField, Select, Checkbox, FormGroup, FormControlLabel, MenuItem } from "@mui/material";
+
 import styles from "../styles/Form.module.css";
 
 export default function Form({ spots }) {
@@ -19,9 +20,16 @@ export default function Form({ spots }) {
           <Card>
             <CardContent className={styles.formWrapper}>
               <h2>Tickets</h2>
-              <TextField label="Date" />
-              <TextField label="Tickets" />
-              <TextField label="Ticket Type" />
+              <TextField type="date"></TextField>
+              <TextField type="number" label="Number of tickets" />
+
+              <InputLabel id="dropdown-label" label="ticket-type" placeholder="Ticket-type" className={styles.dropdownLabel} style={{ position: "relative" }}>
+                Choose ticket type
+              </InputLabel>
+              <Select labelId="ticket-type" id="dropdowm" label="Ticket-Type" value={(selectedSpot, selectedArea)} onChange={handleChange}>
+                <MenuItem value="reg">Regular</MenuItem>
+                <MenuItem value="vip">VIP</MenuItem>
+              </Select>
               <h2>Available Spots:</h2>
               <FormGroup labelId="dropdown-label" id="dropdowm" label="Available spots" value={(selectedSpot, selectedArea)} onChange={handleChange}>
                 {spots.map((spot, availability) => (
