@@ -30,7 +30,7 @@ export default function Form({ spots }) {
           <Card>
             <CardContent className={styles.formWrapper}>
               <h2>Tickets</h2>
-              <DatePicker />
+              {/* <DatePicker /> */}
               <TextField label="Tickets" />
 
               <InputLabel
@@ -44,7 +44,7 @@ export default function Form({ spots }) {
               </InputLabel>
               <Select
                 labelId="ticket-type"
-                id="dropdowm"
+                id="dropdown"
                 label="Ticket-Type"
                 value={(selectedSpot, selectedArea)}
                 onChange={handleChange}
