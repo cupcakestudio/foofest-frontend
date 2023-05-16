@@ -2,9 +2,9 @@ import "@/styles/globals.css";
 import { ProgramProvider } from "../contexts/programContext";
 import App from "next/app";
 
-export default function MyApp({ Component, pageProps, bandData }) {
+export default function MyApp({ Component, pageProps }) {
   return (
-    <ProgramProvider value={bandData}>
+    <ProgramProvider>
       <Component {...pageProps} />;
     </ProgramProvider>
   );

@@ -5,7 +5,7 @@ import Head from "next/head";
 import ProgramSite from "@/components/programSite";
 
 export default function Home({ bandData }) {
-  console.log(bandData);
+  // console.log(bandData);
   return (
     <>
       <Head>
@@ -16,7 +16,7 @@ export default function Home({ bandData }) {
         <link rel="icon" href="" />
       </Head>
       <Landing />
-      {/* <ProgramSite /> */}
+      <ProgramSite />
       {bandData.map((perBand) => (
         //key & value fortæller hvad bands sorteres på
         <section key={bandData.slug} value={bandData.slug}>
